@@ -48,27 +48,39 @@ hog.c → CPU hog test program
 * Build Instructions*
 Compile kernel module:
 make
+
 Compile hog generator:
 gcc hog.c -o hog
 
 *Usage (Demo Flow)*
 Start CPU hog:
+
 ./hog
+
 Load kernel module:
+
 sudo insmod resp_guard.ko
+
 View kernel logs:
+
 sudo dmesg | grep RESP_GUARD
 
 Expected output:
 
 RESP_GUARD: CPU hog detected! PID=1234 NAME=hog
+
 RESP_GUARD: Priority reduced for PID=1234 new nice=10
+
 Verify priority change:
+
 ps -o pid,ni,comm -p 1234
+
 Stop hog:
 pkill hog
+
 Remove module:
 sudo rmmod resp_guard
+
  Test Program (hog.c)
 
 Creates an infinite loop to simulate a CPU-hogging process.
@@ -93,8 +105,6 @@ Demonstration-level prototype
 
 Repeated detection possible for multiple hogs
 
-*Hackathon Relevance*
-
 This project demonstrates:
 
 Kernel-level monitoring
@@ -108,4 +118,5 @@ Practical responsiveness protection
 *Authors*
 
 Team - Illumina : Pebbeti Navya Sri | Deepthi Subraveti|  Donthi Nishitha | Patil Shiva Deekshitha
+
 Submission for the Event: Netrik National Hack 2026 - IIITDM Kurnool
