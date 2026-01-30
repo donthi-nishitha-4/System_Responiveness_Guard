@@ -105,7 +105,7 @@ Demonstration-level prototype
 
 Repeated detection possible for multiple hogs
 
-This project demonstrates:
+*This project demonstrates:*
 
 Kernel-level monitoring
 
